@@ -1,0 +1,31 @@
+class car{
+    String chePai;
+    float price;
+    float price1;
+    
+    car(String chePai,float price){
+        this.chePai=chePai;
+        this.price1=price*4/5;
+        this.price=price;
+    }
+
+    void dismessage(){
+        System.out.println("这辆车的品牌是"+chePai+"原价是"+price+"打折后为"+price1);
+    }
+
+    void set_price(float price){//修改折扣后的售价
+        this.price1 = price;
+    }
+
+    void set_price_by_coef(double off){
+        this.price1 = (float) (price * off);
+    }
+}
+    
+    public class CarTest{
+        public static void main(String[] args){
+            car c = new car("奔驰 S6OO",50000);
+            c.set_price_by_coef(0.5);
+            c.dismessage();
+        }
+    }
